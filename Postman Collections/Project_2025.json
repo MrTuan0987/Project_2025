@@ -3089,7 +3089,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "bb1eada9-a25a-41f2-9e7c-1fe25efcb3b0",
+				"id": "e6de8432-3269-43ec-94ef-165e0d1111da",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3101,12 +3101,16 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "20b05e2b-d99b-4a7f-81e1-81366fbf764b",
+				"id": "8a365f08-5e7d-4eaf-9ecf-cddd96d61456",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.test(\"Response time is less than 1500 conchode?naya\", function () {\r",
 					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+					"});\r",
+					"\r",
+					"pm.test(\"Status code 200OK?\", function () {\r",
+					"    pm.expect(pm.response.status).to.be(200);\r",
 					"});\r",
 					""
 				]
