@@ -3089,7 +3089,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8a6800ab-adcf-4b73-8306-127e9f86dd99",
+				"id": "76ee4079-c12a-4a9f-aaa7-09fc3aa79815",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3101,7 +3101,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "85a817b1-e287-4b30-9b19-40d69ecc507c",
+				"id": "2c9d3b6c-c3d6-4707-8239-e0318f94ca49",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3109,8 +3109,8 @@
 					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 					"});\r",
 					"\r",
-					"pm.test(\"Status code 200 con cakkkk\", function () {\r",
-					"    pm.expect(pm.response.status).to.be(200);\r",
+					"pm.test(\"Status code is 200\", function () {\r",
+					"    pm.response.to.have.status(200);\r",
 					"});\r",
 					""
 				]
