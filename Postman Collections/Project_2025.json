@@ -3089,7 +3089,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "b41a4101-ff6f-48c3-bce2-e1a1bed3072a",
+				"id": "b128bad6-6c8e-4ce7-a824-30d903a21b5c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3101,11 +3101,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "022a6624-4afd-4126-a288-66140fe11562",
+				"id": "3b892076-76ad-4fac-8c00-e33adbbfd05e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					"pm.test(\"Response time is less than 1000 concak\", function () {\r",
+					"pm.test(\"Response time is less than 1000 conchode?\", function () {\r",
 					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 					"});\r",
 					""
