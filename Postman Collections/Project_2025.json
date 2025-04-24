@@ -1,0 +1,3122 @@
+{
+	"info": {
+		"_postman_id": "5a9948db-b0f6-4bc8-b7fc-786ca1e00fcc",
+		"name": "Project_2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Check Exist_Phone",
+					"item": [
+						{
+							"name": "Check_Exist_200 OK",
+							"id": "e395b6b8-904a-4efe-81f5-c8792289b01a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"phone\":\"0346569108\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/customers/exist"
+							},
+							"response": []
+						},
+						{
+							"name": "Check_Exist_400 (Nhập sai sđt)",
+							"id": "33f475a1-95f0-4a82-9bb2-fe6c5bc01c94",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"phone\":\"0346569106\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/customers/exist"
+							},
+							"response": []
+						},
+						{
+							"name": "Check_Exist_400 (Nhập sai type)",
+							"id": "4b3b59a8-dfff-400c-a1bd-941d99b7052a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"phone\":\"03406\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/customers/exist"
+							},
+							"response": []
+						},
+						{
+							"name": "Check_Exist_400 (Nhập chữ)",
+							"id": "5f8bc9a8-957b-4d6b-94e3-2ccf356827d3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"phone\":\"ádsadf\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/customers/exist"
+							},
+							"response": []
+						},
+						{
+							"name": "Check_Exist_400 (Bỏ trống)",
+							"id": "84727bd7-f180-4b61-867d-8fabc668b148",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"phone\":\"\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/customers/exist"
+							},
+							"response": []
+						}
+					],
+					"id": "8e320dab-27e5-460f-92db-ab8352f7cc4c",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "1c57b715-89ec-4e78-b767-f50f16130259",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "c70ad40e-e5d0-420b-8fc9-6634e37b9af7",
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Login_Email, pass",
+					"item": [
+						{
+							"name": "Login_Success",
+							"id": "86378d60-2a7f-4b76-ae40-649fb9c8449e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\":\"password\",\"email\":\"quanngomaic@gmail.com\",\"password\":\"Dapgiailoitaiai?0987!\",\"device_id\":\"67b095fe-a231-15f4-ee5d-892478891aaf\",\"captcha\":{\"status\":\"passed\",\"seccode\":\"ZjNkMDA2NTktYWI3Yi00NjViLTkxN2QtNWEyNWExYTcwOTIw\",\"type\":\"puzzle\"}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v3/tokens"
+							},
+							"response": []
+						},
+						{
+							"name": "Nhập Acc ko tồn tại",
+							"id": "328b1928-4420-4749-bdb2-92b1c5eac12f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\":\"password\",\"email\":\"anngomaiphuc@gmail.com\",\"password\":\"Dapgiailoitaiai?0987!\",\"device_id\":\"67b095fe-a231-15f4-ee5d-892478891aaf\",\"captcha\":{\"status\":\"passed\",\"seccode\":\"ZjNkMDA2NTktYWI3Yi00NjViLTkxN2QtNWEyNWExYTcwOTIw\",\"type\":\"puzzle\"}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v3/tokens"
+							},
+							"response": []
+						},
+						{
+							"name": "Bỏ trống Email",
+							"id": "dcc13704-a3df-4038-adc1-ecb46b0c56f9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\":\"password\",\"email\":\"\",\"password\":\"Dapgiailoitaiai?0987!\",\"device_id\":\"67b095fe-a231-15f4-ee5d-892478891aaf\",\"captcha\":{\"status\":\"passed\",\"seccode\":\"ZjNkMDA2NTktYWI3Yi00NjViLTkxN2QtNWEyNWExYTcwOTIw\",\"type\":\"puzzle\"}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v3/tokens"
+							},
+							"response": []
+						},
+						{
+							"name": "Bỏ trống Pass",
+							"id": "6140f09c-e5dc-437f-9dde-8c534fed8efd",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\":\"password\",\"email\":\"quanngomaiphuc@gmail.com\",\"password\":\"\",\"device_id\":\"67b095fe-a231-15f4-ee5d-892478891aaf\",\"captcha\":{\"status\":\"passed\",\"seccode\":\"ZjNkMDA2NTktYWI3Yi00NjViLTkxN2QtNWEyNWExYTcwOTIw\",\"type\":\"puzzle\"}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v3/tokens"
+							},
+							"response": []
+						}
+					],
+					"id": "07681e97-4ba3-4b7a-ab3f-effca259b794"
+				},
+				{
+					"name": "Login_Phone",
+					"item": [
+						{
+							"name": "Login_Success Phone",
+							"id": "38a1c523-4eea-481a-ac66-1127e05d6dd6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\":\"password\",\"email\":\"anngomaiphuc@gmail.com\",\"password\":\"Dapgiailoitaiai?0987!\",\"device_id\":\"67b095fe-a231-15f4-ee5d-892478891aaf\",\"captcha\":{\"status\":\"passed\",\"seccode\":\"ZjNkMDA2NTktYWI3Yi00NjViLTkxN2QtNWEyNWExYTcwOTIw\",\"type\":\"puzzle\"}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v3/tokens"
+							},
+							"response": []
+						},
+						{
+							"name": "Bỏ trống Pass",
+							"id": "f1c408f9-37a2-4bce-802c-64f7ebae163f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\":\"password\",\"email\":\"0346569108\",\"password\":\"\",\"device_id\":\"67b095fe-a231-15f4-ee5d-892478891aaf\",\"captcha\":{\"status\":\"passed\",\"seccode\":\"MGFiYTFkZGMtZWZjYy00NjlkLTg2YjYtNTliNzQ5MWU0ZWJj\",\"type\":\"puzzle\"}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v3/tokens"
+							},
+							"response": []
+						},
+						{
+							"name": "Nhập sai Pass",
+							"id": "de8fb367-08ec-4297-9522-3006e00657f2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"grant_type\":\"password\",\"email\":\"0346569108\",\"password\":\"1111\",\"device_id\":\"67b095fe-a231-15f4-ee5d-892478891aaf\",\"captcha\":{\"status\":\"passed\",\"seccode\":\"MGFiYTFkZGMtZWZjYy00NjlkLTg2YjYtNTliNzQ5MWU0ZWJj\",\"type\":\"puzzle\"}}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v3/tokens"
+							},
+							"response": []
+						}
+					],
+					"id": "6ba57ecb-df0b-4c50-8b6d-b81f537a7dd3"
+				}
+			],
+			"id": "e24bbaea-7176-4c08-aab1-e720090da463"
+		},
+		{
+			"name": "Info_Acc",
+			"item": [
+				{
+					"name": "Check_profile",
+					"id": "6f19e18b-36ae-4404-965f-69054226cd72",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "https://tiki.vn/api/v2/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Check token expired",
+					"id": "dd9c328e-7d5b-4ea0-b11d-bf4e3d419c7d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NDYxODgxMSwiZXhwIjoxNzQ0NzA1MjExLCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6Imdvb2dsZSJ9.DDViwZTdEckiVVPMz-ZwulQV4D6o2ikEf3b4NtMvr30r9eCUOErsZPLxQabhaZulEz-nNc0CKMBtJJEPLa6QqjmfCE-W-CV7IBcnbbvYA68XleD_lrl2eE4wHfQBsWuEp2N9InCLE6IPhBCMG4An4FlmV0zQFxud2e1Ca4z5SWikpQNW9o1tQ0rmtMoZJJOn7Ecr6JYXJwJe_aVgSNIL5ScpI7fF5JuItRVsmKWtwf_54TbYwSPjLwb2W6IwRy51olPB7MgVJDVagrceCRYU_-y7iQeEWc9crS_hcPgY7GnKVqjqlEqtX8WmPe36keXkNNhSDQwPPaOkZDYX_yn1O_RogOvpN3DaAbFdI3xVv3JhRMjXWwa3DzH-TLed2syFSGIiHDuF10fajZIW6jpKwSnB81gqR07OGNN93xIYAPqmdrPqt1PCYEDScTRri7N4QLKXxOdQtMp7shZ8TjJporbaGwmNwkE_jndXw08FqZj4ntcGsfh0hSvu_OjuYVP0MmnkD9rZ1KqxY6iaFTJ9tQ1tHhUoyCuBp6LdKpd-gfTy1nLYgOa3lVpEnK1NTmKzKHPqv6na5XNb02H6EQJwMLRgBndn1wZRbgaRF7e17OT2rhw6DKp8c33D1U14Yo3rZT0ojVkNVZMZjz28T1IetYSsGU2vL-8sKcH8QCfkCD8",
+								"type": "text"
+							}
+						],
+						"url": "https://tiki.vn/api/v2/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Check ko nhập token",
+					"id": "5deaf821-3b6d-43ba-8d11-3028a399fa41",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": "https://tiki.vn/api/v2/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Check nhập sai token",
+					"id": "becc15b1-6cec-4cbd-a898-e5fce86a0549",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "sadajdasjkdaso234mcaposd",
+								"type": "text"
+							}
+						],
+						"url": "https://tiki.vn/api/v2/me"
+					},
+					"response": []
+				},
+				{
+					"name": "Check_ acc level",
+					"id": "ee132825-110a-4cd6-b274-2ee95dca65c3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://tiki.vn/api/duck/consumer/external/reward/v1/account"
+					},
+					"response": []
+				},
+				{
+					"name": "Check_Address",
+					"id": "a6431582-e7cb-4c8a-ac73-4e8a9006b08a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "https://tiki.vn/api/v2/me/addresses"
+					},
+					"response": []
+				}
+			],
+			"id": "bd298a92-d1de-42d0-b908-d69eaa8e53b7"
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Get_Category_Menu",
+					"id": "ec948e34-093c-4380-900e-f8b4dfc8b7c0",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.tiki.vn/raiden/v2/menu-config?platform=desktop",
+							"protocol": "https",
+							"host": [
+								"api",
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"raiden",
+								"v2",
+								"menu-config"
+							],
+							"query": [
+								{
+									"key": "platform",
+									"value": "desktop"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Category (Ancestor)",
+					"id": "0fd0e88c-0b08-4318-bf13-9a5389b7be4e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tiki.vn/api/v2/categories/1882?include=ancestors",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"categories",
+								"1882"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "ancestors"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Category (Children)",
+					"id": "741155fb-960c-4949-9152-8af3ddaf33a4",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tiki.vn/api/v2/categories?include=children&parent_id=1882",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "children"
+								},
+								{
+									"key": "parent_id",
+									"value": "1882"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Category Definition",
+					"id": "fd0ce407-c14c-400a-8ba8-7f06ab09ee0c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.tiki.vn/brickv2/api/public/tiki-categories/info/1882?type=CATEGORY&include_pages=false",
+							"protocol": "https",
+							"host": [
+								"api",
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"brickv2",
+								"api",
+								"public",
+								"tiki-categories",
+								"info",
+								"1882"
+							],
+							"query": [
+								{
+									"key": "type",
+									"value": "CATEGORY"
+								},
+								{
+									"key": "include_pages",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Category (Detail_list)",
+					"id": "5db724e6-b095-4414-af00-a306a5319934",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tiki.vn/api/personalish/v1/blocks/listings?limit=5&sort=top_seller&page=1&urlKey=do-choi-me-be&category=2549",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"personalish",
+								"v1",
+								"blocks",
+								"listings"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "top_seller"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "urlKey",
+									"value": "do-choi-me-be"
+								},
+								{
+									"key": "category",
+									"value": "2549"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "64aa3703-7202-429a-af0f-d40d69b5d688"
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "View_Cart",
+					"item": [
+						{
+							"name": "View_Cart_Suceess",
+							"id": "774b3e3e-ba6a-43e5-bfba-747c1d88bdbf",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/info"
+							},
+							"response": []
+						},
+						{
+							"name": "View_Cart_bỏ trống token",
+							"id": "5dfe861d-352e-4c28-abb6-0ea859e410c1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-access-token",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/info"
+							},
+							"response": []
+						},
+						{
+							"name": "View_Cart_nhập sai token",
+							"id": "8a19a43b-e596-4d5b-9a74-2023d0c8f347",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-access-token",
+										"value": "fsdafdshbfdfdsfdsfds",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/info"
+							},
+							"response": []
+						},
+						{
+							"name": "View_Cart_token hết hạn",
+							"id": "350fc541-7ba5-41e9-be75-7ec82db9e4c0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NDYxODgxMSwiZXhwIjoxNzQ0NzA1MjExLCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6Imdvb2dsZSJ9.DDViwZTdEckiVVPMz-ZwulQV4D6o2ikEf3b4NtMvr30r9eCUOErsZPLxQabhaZulEz-nNc0CKMBtJJEPLa6QqjmfCE-W-CV7IBcnbbvYA68XleD_lrl2eE4wHfQBsWuEp2N9InCLE6IPhBCMG4An4FlmV0zQFxud2e1Ca4z5SWikpQNW9o1tQ0rmtMoZJJOn7Ecr6JYXJwJe_aVgSNIL5ScpI7fF5JuItRVsmKWtwf_54TbYwSPjLwb2W6IwRy51olPB7MgVJDVagrceCRYU_-y7iQeEWc9crS_hcPgY7GnKVqjqlEqtX8WmPe36keXkNNhSDQwPPaOkZDYX_yn1O_RogOvpN3DaAbFdI3xVv3JhRMjXWwa3DzH-TLed2syFSGIiHDuF10fajZIW6jpKwSnB81gqR07OGNN93xIYAPqmdrPqt1PCYEDScTRri7N4QLKXxOdQtMp7shZ8TjJporbaGwmNwkE_jndXw08FqZj4ntcGsfh0hSvu_OjuYVP0MmnkD9rZ1KqxY6iaFTJ9tQ1tHhUoyCuBp6LdKpd-gfTy1nLYgOa3lVpEnK1NTmKzKHPqv6na5XNb02H6EQJwMLRgBndn1wZRbgaRF7e17OT2rhw6DKp8c33D1U14Yo3rZT0ojVkNVZMZjz28T1IetYSsGU2vL-8sKcH8QCfkCD8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/info"
+							},
+							"response": []
+						},
+						{
+							"name": "View_Cart_Giỏ hàng trống",
+							"id": "56779de4-1071-4b0e-a0ea-e102fb99a766",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NDYxODgxMSwiZXhwIjoxNzQ0NzA1MjExLCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6Imdvb2dsZSJ9.DDViwZTdEckiVVPMz-ZwulQV4D6o2ikEf3b4NtMvr30r9eCUOErsZPLxQabhaZulEz-nNc0CKMBtJJEPLa6QqjmfCE-W-CV7IBcnbbvYA68XleD_lrl2eE4wHfQBsWuEp2N9InCLE6IPhBCMG4An4FlmV0zQFxud2e1Ca4z5SWikpQNW9o1tQ0rmtMoZJJOn7Ecr6JYXJwJe_aVgSNIL5ScpI7fF5JuItRVsmKWtwf_54TbYwSPjLwb2W6IwRy51olPB7MgVJDVagrceCRYU_-y7iQeEWc9crS_hcPgY7GnKVqjqlEqtX8WmPe36keXkNNhSDQwPPaOkZDYX_yn1O_RogOvpN3DaAbFdI3xVv3JhRMjXWwa3DzH-TLed2syFSGIiHDuF10fajZIW6jpKwSnB81gqR07OGNN93xIYAPqmdrPqt1PCYEDScTRri7N4QLKXxOdQtMp7shZ8TjJporbaGwmNwkE_jndXw08FqZj4ntcGsfh0hSvu_OjuYVP0MmnkD9rZ1KqxY6iaFTJ9tQ1tHhUoyCuBp6LdKpd-gfTy1nLYgOa3lVpEnK1NTmKzKHPqv6na5XNb02H6EQJwMLRgBndn1wZRbgaRF7e17OT2rhw6DKp8c33D1U14Yo3rZT0ojVkNVZMZjz28T1IetYSsGU2vL-8sKcH8QCfkCD8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/info"
+							},
+							"response": []
+						},
+						{
+							"name": "View_Cart_  1 SP và số lương 1",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4ffbc67d-668d-49d3-8717-d63a4f9d910f",
+										"exec": [
+											"let data = pm.response.json();\r",
+											"\r",
+											"let items = data.items || [];\r",
+											"let itemCount = items.length;\r",
+											"let itemQty = items.reduce((sum, item) => sum + item.qty, 0);\r",
+											"\r",
+											"console.log(\"Danh sách items:\", items);\r",
+											"console.log(\"Số lượng loại sản phẩm (items_count):\", itemCount);\r",
+											"console.log(\"Tổng số sản phẩm (items_qty):\", itemQty);\r",
+											"\r",
+											"// Lưu vào biến môi trường nếu cần dùng ở request khác\r",
+											"pm.environment.set(\"items_count\", itemCount);\r",
+											"pm.environment.set(\"items_qty\", itemQty);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "0cae352f-8ae0-4589-94ec-977e49eeb360",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tiki.vn/api/v2/intended_cart/items?reset=false&page=1&page_size=30",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"intended_cart",
+										"items"
+									],
+									"query": [
+										{
+											"key": "reset",
+											"value": "false"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View_Cart_  1 SP và số lượng 2",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4ffbc67d-668d-49d3-8717-d63a4f9d910f",
+										"exec": [
+											"let data = pm.response.json();\r",
+											"\r",
+											"let items = data.items || [];\r",
+											"let itemCount = items.length;\r",
+											"let itemQty = items.reduce((sum, item) => sum + item.qty, 0);\r",
+											"\r",
+											"console.log(\"Danh sách items:\", items);\r",
+											"console.log(\"Số lượng loại sản phẩm (items_count):\", itemCount);\r",
+											"console.log(\"Tổng số sản phẩm (items_qty):\", itemQty);\r",
+											"\r",
+											"// Lưu vào biến môi trường nếu cần dùng ở request khác\r",
+											"pm.environment.set(\"items_count\", itemCount);\r",
+											"pm.environment.set(\"items_qty\", itemQty);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "30c7d224-1e57-46b5-9563-1a05c2ce75b4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tiki.vn/api/v2/intended_cart/items?reset=false&page=1&page_size=30 ",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"intended_cart",
+										"items"
+									],
+									"query": [
+										{
+											"key": "reset",
+											"value": "false"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "30 "
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "View_Cart_ nhiều SP và nhiều số lượng",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"id": "4ffbc67d-668d-49d3-8717-d63a4f9d910f",
+										"exec": [
+											"let data = pm.response.json();\r",
+											"\r",
+											"let items = data.items || [];\r",
+											"let itemCount = items.length;\r",
+											"let itemQty = items.reduce((sum, item) => sum + item.qty, 0);\r",
+											"\r",
+											"console.log(\"Danh sách items:\", items);\r",
+											"console.log(\"Số lượng loại sản phẩm (items_count):\", itemCount);\r",
+											"console.log(\"Tổng số sản phẩm (items_qty):\", itemQty);\r",
+											"\r",
+											"// Lưu vào biến môi trường nếu cần dùng ở request khác\r",
+											"pm.environment.set(\"items_count\", itemCount);\r",
+											"pm.environment.set(\"items_qty\", itemQty);\r",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"id": "b256310c-2e92-4529-8a37-1cea6d5d101f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://tiki.vn/api/v2/intended_cart/items?reset=false&page=1&page_size=30",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"intended_cart",
+										"items"
+									],
+									"query": [
+										{
+											"key": "reset",
+											"value": "false"
+										},
+										{
+											"key": "page",
+											"value": "1"
+										},
+										{
+											"key": "page_size",
+											"value": "30"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "980ee1ff-3fb0-4a79-aa17-9eb76d3cd81f"
+				},
+				{
+					"name": "Add_Item",
+					"item": [
+						{
+							"name": "Add_Item_Success",
+							"id": "3e218692-f30e-4d93-be7a-cb1e929ed62f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"products\":[{\"product_id\":\"76195846\",\"qty\":10}]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/items"
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Item_Token Expired",
+							"id": "65c705de-3bf6-4dc7-94e5-e922a795ae49",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NTEzODA5MywiZXhwIjoxNzQ1MjI0NDkzLCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIn0.kujUVybRNE5JtaSfHB3EmztKMF3w80s555GOiK5wYrnemEAYiuqbnJU3rfitmERCunjWoBqJKiCTIu0pOIPC3GU_ue5hJVnBrAWPdNCkXVyNq7seaB7kf6GAUTCgsDC6bYNEw-Gb0A0wNiKVf_JiNEWz6FEm0SWF5kfU6bdfeuPPQvuEBs0llwkiDEdAGD_zS4ytHmyzhfwpgRbXEG5WxX-zWX3ghL8E6Pxx3CzFeYqJg-thVTfNmraLEcI5pBTHPyPw3CBfkMQIE7JLJlHZI5u2fGWrKRJXcy5emhm5ncdUXPMNkY4AitwOkrYauqaoDAFv2aMjLUGudFeI0y2dudw73pqb6iEP-BRN_853I56DqpnzQ1rHkiugXJkQE5JxjwnIiuCfDuTTnMuqPfIcB8hVOQMJvK32rUCf6R_nR0KaHT-s3nhLO0R4bJ27ponVSt0IDUujQRYmCCC2NfH__Hu9uRbHeaasZ7CmKRKsSy8PP1Q6l-6_euZL2Nhg0uVYGgv0hRS_zFS23NDa4hyK2KixYCI4KbSSV6wtiYrEaGzaEgnkz6PW4_jSOjib1odGUb8CSmr5fiar3hLjT9c4EYNjE3da8tWALcOk9kwuWhb6chrBxlrlbDDGtQQr1KaQpNuH6iUx1JrobPu7Cwr1OpFnYB7cvfb_BbFWT2vtLcI",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"products\":[{\"product_id\":\"276448817\",\"qty\":1}]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/items"
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Item_bỏ trống Token",
+							"id": "39146ca0-0f09-4146-8f76-b2e014792669",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"products\":[{\"product_id\":\"276448817\",\"qty\":1}]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/items"
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Item_nhập sai Token",
+							"id": "f4cbd05b-74d4-477c-8856-28fffd1548d9",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"products\":[{\"product_id\":\"276448817\",\"qty\":1}]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/items"
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Item_khác thuộc tính",
+							"id": "2bc789e2-18a0-4e8d-a019-53ce75799a13",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"products\":[{\"product_id\":\"274101975\",\"qty\":1}]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/items"
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Item_khác cùng thuộc tính",
+							"id": "445aa798-3914-4e1f-bbee-191d3571349f",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"products\":[{\"product_id\":\"274101975\",\"qty\":1}]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/items"
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Item_SL > hàng tồn kho",
+							"id": "2f7cfa61-543f-4299-aecd-29b652b7f117",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"products\":[{\"product_id\":\"274101975\",\"qty\":1554544}]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/items"
+							},
+							"response": []
+						},
+						{
+							"name": "Add_Item_hết hàng",
+							"id": "1903c8da-4788-47ff-904c-a953146f7752",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"products\":[{\"product_id\":\"271140896\",\"qty\":1}]}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/carts/mine/items"
+							},
+							"response": []
+						}
+					],
+					"id": "e2248e68-bb0a-473d-bf88-8e2d4a0f8d4f"
+				},
+				{
+					"name": "Edit_Cart",
+					"item": [
+						{
+							"name": "Edit_Cart ko nhập token",
+							"id": "9cc22ed4-fcb1-4356-be1a-f720f720f808",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":54510165,\"parent_item_id\":null,\"qty\":6}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/intended_cart/sellers/81354/items/cec3c27f-1fdb-11f0-a3d9-b6f79a025046/quantity"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit_Cart nhập sai token",
+							"id": "956c30dc-adaf-4bd5-819b-229eb895cc51",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NTMwNjEzNSwiZXhwIjoxNzQ1MzkyNTM1LCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIn0.RIPq9kbjZaR9Vj9RJ4uUV0LCW0kZAzsEbrl8vQnpFdYBqLJRzqNLw_bVSawnWuF07DFp6GasZoyk4WNRI-8TUE6Ej-a3oFZC0dOGW-1ZF3dqjWWf53fRalP3DfZFLBULH3G7g5wmfgR8b5rwv6-pJnfkYD7MNB1fFtDgZFNtgdq-fBIO0WBeQh60JgSO0yPqh0Kt4XY3Ml2ZWAZlH-5szUdh0hp8ojVA9A2U8juVamWFCywwuoDDElJ5ndzlRPOhiixxfFY4_X_YhC6oui2RTDbokSCVJhyCP_v5XIs1tUdFgr4hMfcwWLpwEVhB7XBbXgJUEWNNyWz_6rVNVOA92oBstfTxNx752uxiEv43naNBm7s-upe5_zjK2J_II3vTRwpWc6k2HNI_rCM-xnXwdsuqYTnbN_XV0h6M--4czrp_ZI1k2qGO1PpI_o7B9edh2G_jT44owP14Nm26eAgo-zzYjoAnQiAWqZrs_6J4kVMlFFn66xFNe8Sk8aYCIrkBHaWT79vOXQrscmNWnXbcrXBymCMryEtzxcIpxibi9oHY-7-3_YaVH_OCKYWYNeSzH0UDT7Cjudlza9tAzbOx6DGSc6ug1HC_hwPThlrzZeHjKp2SjQx3vQmlEk870NwSZ8xmsYfSIy9DYnKIFhY4QixgizhS7CDbXs",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":54510165,\"parent_item_id\":null,\"qty\":6}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/intended_cart/sellers/81354/items/cec3c27f-1fdb-11f0-a3d9-b6f79a025046/quantity"
+							},
+							"response": []
+						},
+						{
+							"name": "Edit_Cart nhập token hết hạn",
+							"id": "b7208bdc-e49e-4628-b957-8310284335d8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":54510165,\"parent_item_id\":null,\"qty\":6}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/intended_cart/sellers/81354/items/cec3c27f-1fdb-11f0-a3d9-b6f79a025046/quantity"
+							},
+							"response": []
+						},
+						{
+							"name": "Thêm số lượng",
+							"id": "848b5e8e-e11b-4c49-920a-9b1a506edb74",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":54510165,\"parent_item_id\":null,\"qty\":6}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/intended_cart/sellers/81354/items/cec3c27f-1fdb-11f0-a3d9-b6f79a025046/quantity"
+							},
+							"response": []
+						},
+						{
+							"name": "Giảm số lượng",
+							"id": "5d437d92-4a62-4316-a205-d3a1d9a140f1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"product_id\":54510165,\"parent_item_id\":null,\"qty\":1}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/intended_cart/sellers/81354/items/cec3c27f-1fdb-11f0-a3d9-b6f79a025046/quantity"
+							},
+							"response": []
+						}
+					],
+					"id": "bbcc119d-0212-4115-b9b0-6172e43f78a6"
+				},
+				{
+					"name": "Delete_Cart",
+					"item": [
+						{
+							"name": "Delete_ ko có token",
+							"id": "6fdb24af-a036-4c1e-86f4-4c00255aa26e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/intended_cart/selected_items"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_ nhập sai token",
+							"id": "7a9a7e25-7673-42c2-810a-aefea90ed2a6",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "https://tiki.vn/api/v2/intended_cart/selected_items"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_ dùng token hết hạn",
+							"id": "802460a6-cf93-479b-bca1-0c1b2a69d7b4",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": "https://tiki.vn/api/v2/intended_cart/selected_items"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_1 SP",
+							"id": "3704b6e3-b1f1-4777-8891-c8dd45d10ef3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": "https://tiki.vn/api/v2/intended_cart/selected_items"
+							},
+							"response": []
+						},
+						{
+							"name": "Delete_All_SP",
+							"id": "dc9bae1f-fb6a-4d04-9a37-488ddb19935e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": "https://tiki.vn/api/v2/intended_cart/selected_items"
+							},
+							"response": []
+						}
+					],
+					"id": "69389412-febb-4421-a4f1-3b1705cc251f"
+				}
+			],
+			"id": "227be05e-f12a-407e-af65-3e99508331f7"
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Detail_product",
+					"id": "47c6124b-6a32-4e3d-a248-37babfc6ca4d",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tiki.vn/api/v2/products/153885246?platform=web&spid=153885247&version=3",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"products",
+								"153885246"
+							],
+							"query": [
+								{
+									"key": "platform",
+									"value": "web"
+								},
+								{
+									"key": "spid",
+									"value": "153885247"
+								},
+								{
+									"key": "version",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product_Get_Feedback",
+					"id": "514475cb-2268-4120-98bd-bfb0716a0b2a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://tiki.vn/api/v2/reviews?limit=5&include=comments,contribute_info,attribute_vote_summary&sort=score%7Cdesc,id%7Cdesc,stars%7Call&page=1&spid=76195846&product_id=74890928&seller_id=1",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"reviews"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5"
+								},
+								{
+									"key": "include",
+									"value": "comments,contribute_info,attribute_vote_summary"
+								},
+								{
+									"key": "sort",
+									"value": "score%7Cdesc,id%7Cdesc,stars%7Call"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "spid",
+									"value": "76195846"
+								},
+								{
+									"key": "product_id",
+									"value": "74890928"
+								},
+								{
+									"key": "seller_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "2493fea9-3fa3-42da-b90c-e447d1ccac75",
+			"auth": {
+				"type": "bearer",
+				"bearer": {
+					"token": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NDAxODQyMCwiZXhwIjoxNzQ0MTA0ODIwLCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6Imdvb2dsZSJ9.OeCQvEjpprv2PCeUOTWTxSjM3OPSN8xlujmZXw-It6LKagyNsT4SbNWJf-GHxJuavacduKjLJWICHdh95OhIKQwHqbwwNHDZ3CappLG3k_gCUJJm8_J3JJC3iNfdu8LJtigY9vXUJN6uV63y_YgcXiszQr_ORD6_Y-Ye21YvG8eD1QOudaYrdphhEif5KmZW6b1l-cAOW3W-5FcaW8mkTNpSNQ-7RDLtffP7PGqp3syKWCu-VWk4zOr2TDIxUAyv5cr87S1d95PzRavOvPUgLidM8d6SCasFI0unz4g9WuEAlK_0AZfkehoFSvY5o-LatLEWeBWOha27SkFmTdSZ2ECN8CAieI5IkZm32kkVYqp89-zvFjl2C9ddrB9DuXKJGZwLun4ADTbOW4vWQFUqaFX-MhzxmGG34U5S7lyVbpCHeoPmJf4q5YwMXDOpMGAl6Y-LVPLljcEUg8IYR0PP1SUvGSURyh6h-3abf2VAjK9BYDxmqagZiJv2adFYXjIJ3LXL0n5F889cXW5wJog3d8S2EwuCWej1v75wVOqpE6fPDI38tAOS6IoI8ZLvnAPtdOTGpMeAE4O6cD967rm5mzsnQJyS64muNLN859VyIjRIO1tnZlWoP9OIX84yZ_jtnwoBfnfcxkGiKtCTe7CBMsJeLff6s1txlOfMeZPjmYY"
+				}
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "85b65101-f435-4692-8816-e2e2863100e5",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "c73b05da-6c03-493e-a9bd-18bfd16c0883",
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Chanel",
+			"item": [
+				{
+					"name": "Get_All_Chanel",
+					"id": "40c12a9a-4d74-4bf0-b0d5-fc784d5c44c3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.tiki.vn/v2/chatapi/channels/personal?page=1&biz_id=null&limit=20&is_receiver_approved=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"v2",
+								"chatapi",
+								"channels",
+								"personal"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "biz_id",
+									"value": "null"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "is_receiver_approved",
+									"value": "true"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Detail_Chanel",
+					"id": "9a9603cf-23a9-44ea-8a99-663b85bef66a",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.tiki.vn/v2/chatapi/messages/personal?channel_id=29378890_01:29952&biz_id=null&channel_type=b2c&version=v2&is_search_message=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"v2",
+								"chatapi",
+								"messages",
+								"personal"
+							],
+							"query": [
+								{
+									"key": "channel_id",
+									"value": "29378890_01:29952"
+								},
+								{
+									"key": "biz_id",
+									"value": "null"
+								},
+								{
+									"key": "channel_type",
+									"value": "b2c"
+								},
+								{
+									"key": "version",
+									"value": "v2"
+								},
+								{
+									"key": "is_search_message",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Chanel_ko nhập token",
+					"id": "61ee35d0-6c90-42dc-a407-a3af8862d5dc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.tiki.vn/v2/chatapi/channels/personal?page=1&biz_id=null&limit=20&is_receiver_approved=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"v2",
+								"chatapi",
+								"channels",
+								"personal"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "biz_id",
+									"value": "null"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "is_receiver_approved",
+									"value": "true"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Chanel_nhập sai token",
+					"id": "edf90199-3a4d-43a4-b7c8-4944a926ae05",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "ákdopasjdioasdhioqwd",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.tiki.vn/v2/chatapi/channels/personal?page=1&biz_id=null&limit=20&is_receiver_approved=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"v2",
+								"chatapi",
+								"channels",
+								"personal"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "biz_id",
+									"value": "null"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "is_receiver_approved",
+									"value": "true"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Chanel_ko nhập token hết hạn",
+					"id": "8728c436-1587-4baf-ac56-5ee1fce4bfe7",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "ákdopasjdioasdhioqwd",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://api.tiki.vn/v2/chatapi/channels/personal?page=1&biz_id=null&limit=20&is_receiver_approved=true",
+							"protocol": "https",
+							"host": [
+								"api",
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"v2",
+								"chatapi",
+								"channels",
+								"personal"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "biz_id",
+									"value": "null"
+								},
+								{
+									"key": "limit",
+									"value": "20"
+								},
+								{
+									"key": "is_receiver_approved",
+									"value": "true"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "78ec6f18-c07a-4b1d-9dfe-96d154a63e2d"
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "Payment_overall (laetst data)",
+					"id": "076f580d-94fe-4069-9bc3-ab8b116af67c",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://tiki.vn/api/v2/carts/mine?include=items,shipping_address,messages,price_summary,last_payment_method,shipping_methods,customer_tikixu_reward,customer_asa_reward&step=4&step_name=checkout%2Forder_view",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"carts",
+								"mine"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "items,shipping_address,messages,price_summary,last_payment_method,shipping_methods,customer_tikixu_reward,customer_asa_reward"
+								},
+								{
+									"key": "step",
+									"value": "4"
+								},
+								{
+									"key": "step_name",
+									"value": "checkout%2Forder_view"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment_overall ko nhập token",
+					"id": "01e5b2ed-6e28-48a3-9e1f-22f5cd9d8512",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://tiki.vn/api/v2/carts/mine?include=items,shipping_address,messages,price_summary,last_payment_method,shipping_methods,customer_tikixu_reward,customer_asa_reward&step=4&step_name=checkout%2Forder_view",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"carts",
+								"mine"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "items,shipping_address,messages,price_summary,last_payment_method,shipping_methods,customer_tikixu_reward,customer_asa_reward"
+								},
+								{
+									"key": "step",
+									"value": "4"
+								},
+								{
+									"key": "step_name",
+									"value": "checkout%2Forder_view"
+								},
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment_ Check address",
+					"id": "ab3adcf3-a459-47e4-9b27-9f85bd2a0e69",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://tiki.vn/api/v2/carts/mine/elements?include=shipping_address",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"carts",
+								"mine",
+								"elements"
+							],
+							"query": [
+								{
+									"key": "include",
+									"value": "shipping_address"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Payment_Check method",
+					"id": "c848ee01-8156-4a12-b233-b454493b8106",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": "https://tiki.vn/api/v2/carts/mine/payment/general-methods"
+					},
+					"response": []
+				},
+				{
+					"name": "Popup_Payment (latest data)",
+					"id": "b528e23b-e863-4ed7-98d1-da66b6d907cc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"payment\":{\"method\":\"viettelpay\",\"original_method\":\"viettelpay\",\"sub_selection_id\":null},\"tax_info\":null,\"customer_note\":\"\",\"delivery_option\":null}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tiki.vn/api/v2/me/orders/276025057/payment?version=2.0",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"me",
+								"orders",
+								"276025057",
+								"payment"
+							],
+							"query": [
+								{
+									"key": "version",
+									"value": "2.0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Popup_RePayment",
+					"id": "4d1df2c0-caae-482d-b81f-dcb0d172c720",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"payment\":{\"method\":\"viettelpay\",\"original_method\":\"viettelpay\",\"sub_selection_id\":null},\"tax_info\":null,\"customer_note\":\"\",\"delivery_option\":null}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://tiki.vn/api/v2/me/orders/538387550/repayment?version=2.0",
+							"protocol": "https",
+							"host": [
+								"tiki",
+								"vn"
+							],
+							"path": [
+								"api",
+								"v2",
+								"me",
+								"orders",
+								"538387550",
+								"repayment"
+							],
+							"query": [
+								{
+									"key": "version",
+									"value": "2.0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "08a4f0d4-b40b-4fcd-a0ac-b733fe029a03"
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "List_Order",
+					"item": [
+						{
+							"name": "List_order Success",
+							"id": "b0a6c9a1-a3cd-4dcc-81ce-9a99478f8fa0",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders?page=0&limit=10",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List_order nhập URL sai",
+							"id": "e9182dfd-a033-4400-941f-0b9dd69c172d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": "https://tiki.vn/api/v2/o"
+							},
+							"response": []
+						},
+						{
+							"name": "List_order nhập URL sai Copy",
+							"id": "d4b75787-9a16-4062-9b1d-1fbf33a48742",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders?page=0&limit=10",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List_order_ko nhập token",
+							"id": "5edc9784-facf-4bdf-9af3-700fed8b337d",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders?page=0&limit=10",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List_order_bỏ trống token",
+							"id": "2d2cf24e-abd7-4854-8f71-afaf50f867f3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders?page=0&limit=10",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List_order_nhập sai Token",
+							"id": "870ecab1-4cee-4dda-be61-c06631ea2b3c",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders?page=0&limit=10",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "785381df-3928-48ac-9525-2dbaf5ae46f0"
+				},
+				{
+					"name": "Detail_Order",
+					"item": [
+						{
+							"name": "Detail_Order_Success",
+							"id": "caa989df-699d-4299-a03a-bcdfda49dda1",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/me/orders/726026799?include=items,price_summary,child_orders,status_histories",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"me",
+										"orders",
+										"726026799"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "items,price_summary,child_orders,status_histories"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Detail_Order ko nhập token",
+							"id": "e3ec092f-0a4b-4008-a77f-d8e31bea41c2",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/me/orders/400611492?include=items,price_summary,child_orders,status_histories",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"me",
+										"orders",
+										"400611492"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "items,price_summary,child_orders,status_histories"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Detail_Order nhập token sai",
+							"id": "f2a4557b-47ca-4d9c-bb33-4182248c71e3",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "oiasjdioashoid",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/me/orders/400611492?include=items,price_summary,child_orders,status_histories",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"me",
+										"orders",
+										"400611492"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "items,price_summary,child_orders,status_histories"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Detail_Order dùng token hết hạn",
+							"id": "6acdb7a3-9ff8-4ad6-9bfc-50bdbc325073",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NTQwOTgyMCwiZXhwIjoxNzQ1NDk2MjIwLCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIn0.gUjTf5jO2eVWue5uQxFeeCc2_0iT3ySe4UXOoUKaeGuh2ZxQbLbZ8B-KzrK5-ZPNNZaINkTKUvgsFmHQYijxbN8Gd_3OpTx8kZp7qhJxJm1dc6lfoIiMXlQmgkpH3R1_999acRr2X9lIHqFfInCentdVEq8x1Ulf4YW8HPqV0CuSii30e6KUYR6gRNXtOzXSa8cBQJLUrzo0a52kKC4UjQgPCi0s-LceHeAsYcY3IzkiCFZw7Br7CZUFPbV0kK2msV2x0pNeyp1Akup2EuXqyj4FhuXgQ_pd6i62Ou8wDKjOhwD-1zDmJjyf-GPBYqg0RbJZuIhYssUagJwExeeEblkakExkfEhxJ1tlbQCw8B_DxQSonfUGtxidcVR0zeRhUUpbUARpuW62rhhNTFR52Ol0q7_T9Kr6jrjIEuNB3V6jHNJ0WCvkho6T9OpQq3ALcbf_hVuBtFvJ1D9e66QQHHXnj8rNYoV2x56QJ4cdxWrxkOM8mFIfHxyDuK9v8dV6ZsyNOkiu-afVmVKmNqW2LkeRkqMi_az0IK2_27DGljAEzh1tiKi0hbMZ9NScHuQ74_qE9xNKMN8qu0pIk0gmCCAbgX9sqld-oAIN8oc5WjcUD4uXCYcA1tRLgBcZDjLKgmE6zyBDbNB7hXV3VNvHrL44LFMjlcRT6MzoRZqaVUE",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/me/orders/400611492?include=items,price_summary,child_orders,status_histories",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"me",
+										"orders",
+										"400611492"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "items,price_summary,child_orders,status_histories"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Detail_Order nhập sai URL",
+							"id": "0a9167b2-1bc9-445a-8103-59e64c285953",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": "https://tiki.vn/api/v2/me/ord"
+							},
+							"response": []
+						},
+						{
+							"name": "Detail_Order nhập sai URL Copy",
+							"id": "93b5dc25-d008-459f-8b1c-0f06ccef055a",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/me/orders/400611492?include=items,price_summary,child_orders,status_histories",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"me",
+										"orders",
+										"400611492"
+									],
+									"query": [
+										{
+											"key": "include",
+											"value": "items,price_summary,child_orders,status_histories"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "622b2b73-c474-4b1e-9dc9-3f10a76d398b"
+				},
+				{
+					"name": "Search_Order",
+					"item": [
+						{
+							"name": "Search_Order_Success",
+							"id": "e4c2018e-e427-4c82-8e8a-db609e1c0426",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders/search?text=wash",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders",
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "wash"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search_Order_nhập sai URL",
+							"id": "6b662554-0aa6-44a9-a6d8-12f27128e346",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders/search?page=0&limit=10&text=wash+tee&relevant=true",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders",
+										"search"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										},
+										{
+											"key": "limit",
+											"value": "10"
+										},
+										{
+											"key": "text",
+											"value": "wash+tee"
+										},
+										{
+											"key": "relevant",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search_Order_chọn sai Method",
+							"id": "020521bb-1f29-463f-9dd3-e6b1bcbe1517",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders/search?text=wash",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders",
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "wash"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search_Order_bỏ trống token",
+							"id": "657313a2-0fbf-427f-8157-19fad22bed68",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders/search?text=wash",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders",
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "wash"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search_Order_nhập token hết hạn",
+							"id": "d4a977bf-1ef5-4858-bcba-40b249d82757",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NTQwOTgyMCwiZXhwIjoxNzQ1NDk2MjIwLCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIn0.gUjTf5jO2eVWue5uQxFeeCc2_0iT3ySe4UXOoUKaeGuh2ZxQbLbZ8B-KzrK5-ZPNNZaINkTKUvgsFmHQYijxbN8Gd_3OpTx8kZp7qhJxJm1dc6lfoIiMXlQmgkpH3R1_999acRr2X9lIHqFfInCentdVEq8x1Ulf4YW8HPqV0CuSii30e6KUYR6gRNXtOzXSa8cBQJLUrzo0a52kKC4UjQgPCi0s-LceHeAsYcY3IzkiCFZw7Br7CZUFPbV0kK2msV2x0pNeyp1Akup2EuXqyj4FhuXgQ_pd6i62Ou8wDKjOhwD-1zDmJjyf-GPBYqg0RbJZuIhYssUagJwExeeEblkakExkfEhxJ1tlbQCw8B_DxQSonfUGtxidcVR0zeRhUUpbUARpuW62rhhNTFR52Ol0q7_T9Kr6jrjIEuNB3V6jHNJ0WCvkho6T9OpQq3ALcbf_hVuBtFvJ1D9e66QQHHXnj8rNYoV2x56QJ4cdxWrxkOM8mFIfHxyDuK9v8dV6ZsyNOkiu-afVmVKmNqW2LkeRkqMi_az0IK2_27DGljAEzh1tiKi0hbMZ9NScHuQ74_qE9xNKMN8qu0pIk0gmCCAbgX9sqld-oAIN8oc5WjcUD4uXCYcA1tRLgBcZDjLKgmE6zyBDbNB7hXV3VNvHrL44LFMjlcRT6MzoRZqaVUE",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders/search?text=wash",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders",
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "wash"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search_Order_nhập sai token",
+							"id": "b2d84f35-afb5-4bbf-a11a-a63d31aa0ce8",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "h90253nfjasop",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders/search?text=wash",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders",
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "wash"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Search_Order_ko tồn tại",
+							"id": "d2d2cea9-ca3d-4d83-969b-9f1eca413cff",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "{{token}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "https://tiki.vn/api/v2/orders/search?text=ádjasoidjoiasjd",
+									"protocol": "https",
+									"host": [
+										"tiki",
+										"vn"
+									],
+									"path": [
+										"api",
+										"v2",
+										"orders",
+										"search"
+									],
+									"query": [
+										{
+											"key": "text",
+											"value": "ádjasoidjoiasjd"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"id": "248fa194-225c-47dd-a65f-3e3ad3d9ae79"
+				}
+			],
+			"id": "f576552b-e3e0-418c-af64-78adf7f9a0a1"
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "f1553749-121d-40df-88cf-2a18013b39c6",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"token = \"eyJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIyOTM3ODg5MCIsImlhdCI6MTc0NTQ3OTUxNiwiZXhwIjoxNzQ1NTY1OTE2LCJpc3MiOiJodHRwczovL3Rpa2kudm4iLCJjdXN0b21lcl9pZCI6IjI5Mzc4ODkwIiwiZW1haWwiOiJxdWFubmdvbWFpcGh1Y0BnbWFpbC5jb20iLCJjbGllbnRfaWQiOiJ0aWtpLXNzbyIsIm5hbWUiOiIyOTM3ODg5MCIsInNjb3BlIjoic3NvIiwiZ3JhbnRfdHlwZSI6InBhc3N3b3JkIn0.aGA9mYAidAjApR74DfdgoQaiOBbDbKbmKsXuhnWRUepSqA11wBTDls_KpTAYqVicVOr4q8mq1iwb8fGfubIzpSNo9CvathOw2oZ3UJStnfS8OTP1vrO2EgJjPFnkJ3eSBaifGiD9aHA7dKj2f8gEA148F_HmE7OMCaqu2yG4mkVbWHecntxOpc4F0CbbBmYpjDLmJiC9Inqx3Kh0-EfqN0No8YFFstPdvQcgQr1Y82Y2ys7EsbM457iTd6USU2oGEbSGHgq959JCtivwogfUO4ZA83H8pLIoQrk6aGjTSCWca6Ka0N-O2BL6WwBlb4_hy0pHXa0uCTnFHHD98w_t4apOq_2UrSGCYKNpZ-pYKSPa_pBrsht0-GCMJEZj7vR67-nqq5IRTVzPSNCYvlyaTdlPrYbSFvvPHaWgi-ZphhgHuD-gKszSdo1v30vEd7PtjhBkaSUcmSy1HvoTAHi1dPaUF9zYY91rz0rstqmvkTOTQg6UW5GtdtAOCz4cOxpUlgZF_iqeyNRTSlnOgZ2dNWPtOHzDhE0MYzGndGLksKe-8ciG7fbljjPseZtM1OMiq8o4afkoA06TnVqx1s-FzGNk2z6m8X5tXLifukcWcE2cnKj2nBqe-ReAKpwP0ZZ0VYTO0skurxNkc8joJFMyVlOcbA0GULXcBsfr-3nNo94\"\r",
+					"pm.collectionVariables.set(\"token\", token)"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "95ce06ae-7325-4999-8a14-e6b8ab1dbe82",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"pm.test(\"Response time is less than 1000 sadasdsadsad\", function () {\r",
+					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+					"});\r",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "token",
+			"value": ""
+		}
+	]
+}
