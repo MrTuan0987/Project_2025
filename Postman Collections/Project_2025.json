@@ -3089,7 +3089,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "15dff0bf-5c9a-49e8-bbc0-c4735472df5a",
+				"id": "6b386b60-3563-4062-a2fc-b29fb57a9f01",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3101,7 +3101,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "10fcaae2-5e60-438b-b921-4ef90c2f9bb3",
+				"id": "a65a4c4c-8751-48ca-82a2-f96d59e511ff",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3109,7 +3109,7 @@
 					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 					"});\r",
 					"\r",
-					"pm.test(\"Status code 200 OK con de\", function () {\r",
+					"pm.test(\"Status code co cai dau buoi\", function () {\r",
 					"    pm.expect(pm.response.status).to.be(200);\r",
 					"});\r",
 					""
