@@ -3105,7 +3105,7 @@
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
-					"pm.test(\"Response time is less than 1000 mseconds\", function () {\r",
+					"pm.test(\"Response time is less than 1000 miliseconds\", function () {\r",
 					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 					"});\r",
 					"\r",
