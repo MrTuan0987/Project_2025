@@ -3089,7 +3089,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "a7002ee7-44ae-4d9f-adce-5d1c9685a5a6",
+				"id": "a2b74569-2b6a-4182-a4d1-5a3b58c2a22e",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3101,7 +3101,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "5ed04008-1d1f-4a57-93e7-be33f89a7f38",
+				"id": "c794d2c4-8ee6-4a45-bf2c-1a2c766058a2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3109,7 +3109,7 @@
 					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
 					"});\r",
 					"\r",
-					"pm.test(\"Status code is 200\", function () {\r",
+					"pm.test(\"Status code is  OK con de\", function () {\r",
 					"    pm.response.to.have.status(200);\r",
 					"});\r",
 					""
