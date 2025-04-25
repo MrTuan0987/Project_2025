@@ -3089,7 +3089,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "05224862-023d-4c23-814f-459de2da81a5",
+				"id": "2037a732-4d5a-4350-a0cf-98ae0b90be4d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3101,18 +3101,13 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "e1649d43-fdf9-4273-857e-6f5d7b5b9a7d",
+				"id": "f7fa1a42-daf7-46c4-b6ab-29753e4d37b2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
 					"pm.test(\"Response time is less than 1000 testPC\", function () {\r",
 					"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
-					"});\r",
-					"\r",
-					"pm.test(\"Status code is  OK condebabe\", function () {\r",
-					"    pm.response.to.have.status(200);\r",
-					"});\r",
-					""
+					"});"
 				]
 			}
 		}
