@@ -10,7 +10,7 @@
 			"name": "Login",
 			"item": [
 				{
-					"name": "Login_Email, passs",
+					"name": "Login_Email, pass2s",
 					"item": [
 						{
 							"name": "Login_Email/Pass_Fail_4xx",
